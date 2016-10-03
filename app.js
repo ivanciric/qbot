@@ -98,19 +98,23 @@ what = [
 football = [
     'Idem i ja!',
     'Nema zuvanja!',
-    '3 korne penal!'
+    '3 korne penal!',
+    'Winnie brani',
+    'Slomio mi Gojko palac..'
 ];
 
 beer = [
     'Moze pivce.',
     'Pivce za zivce.',
-    'Pivce za svemirce.'
+    'Pivce za svemirce.',
+    'PIVOOO!!!',
+    'Vopi sada? Tooooo!!!'
 ];
 
 sns = [
-    'Mere stednje i sprovedene reforme znatno su popravile finansijsku situaciju u Srbiji!',
-    'Marljivim radom koji nam ova vlada pokazuje, ne mozemo manje ni ocekivati.',
-    'Brojke govore sve, Srbija se nalazi na putu ekonomskog oporavka.',
+    'Mere stednje i sprovedene reforme znatno su popravile finansijsku situaciju u Quantox-u!',
+    'Marljivim radom koji nam ovaj menadzment pokazuje, ne mozemo manje ni ocekivati.',
+    'Brojke govore sve, Quantox se nalazi na putu ekonomskog oporavka.',
     'Treba da budemo srećni što neko toliko zapinje da budemo jednog dana kao Švajcarska',
     'Pa i trudili smo se jako, a reforme su urodile plodom',
     'Vukovo zalaganje i naporan rad je doveo do toga.',
@@ -119,7 +123,7 @@ sns = [
     'Kriza nam je bila pred vratima, ali oterali smo je zajednickom promajom. ',
     'Bilo je krajnje vreme da se otrgnemo od provalije zvane bankrot, ko bi nas izvukao iz bule da ne bi Vuka?',
     'Za sada smo na dobrom putu, moramo ovako nastaviti i gradjani ce osetiti boljitak.',
-    'Napredak nase zemlje na polju povecavanja boja zaposlenih a smanjenja nezaposlenih je evidentan. Samo polako, strpljivo i rast ce biti sve veci i veci.',
+    'Napredak nase firme na polju povecavanja boja zaposlenih a smanjenja nezaposlenih je evidentan. Samo polako, strpljivo i rast ce biti sve veci i veci.',
     'Stednjom i reformama uspeli smo da državu dovedemo u stabilno stanje.',
     'Narod razume da je do odredjenih mera moralo doci, zato je i dala poverenje Vuku. Posle mera, sledi period napretka i porasta plata i penzija.',
     'Naravno da ne mozemo da postanemo Svajcarska preko noci, ali da ima pozitivnih rezultata ne moze niko da ospori.'
