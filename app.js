@@ -186,6 +186,18 @@ bot.dialog('/', function (session) {
         || session.message.text.toLowerCase().contains('devl')
         || session.message.text.toLowerCase().contains('rogl')
         || session.message.text.toLowerCase().contains('dan')
+        || session.message.text.toLowerCase().contains('srb')
+        || session.message.text.toLowerCase().contains('svaj')
+        || session.message.text.toLowerCase().contains('srp')
+        || session.message.text.toLowerCase().contains('ekon')
+        || session.message.text.toLowerCase().contains('sit')
+        || session.message.text.toLowerCase().contains('ref')
+        || session.message.text.toLowerCase().contains('rad')
+        || session.message.text.toLowerCase().contains('ban')
+        || session.message.text.toLowerCase().contains('noc')
+        || session.message.text.toLowerCase().contains('mer')
+        || session.message.text.toLowerCase().contains('tru')
+        || session.message.text.toLowerCase().contains('kriz')
     ){
         var snsItem = sns[Math.floor(Math.random()*sns.length)];
         session.send(snsItem);
