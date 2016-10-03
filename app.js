@@ -198,6 +198,7 @@ bot.dialog('/', function (session) {
         || session.message.text.toLowerCase().contains('mer')
         || session.message.text.toLowerCase().contains('tru')
         || session.message.text.toLowerCase().contains('kriz')
+        || session.message.text.toLowerCase().contains('ko')
     ){
         var snsItem = sns[Math.floor(Math.random()*sns.length)];
         session.send(snsItem);
