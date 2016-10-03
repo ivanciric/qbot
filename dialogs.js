@@ -52,5 +52,10 @@ exports.sns = [
     'Napredak nase firme na polju povecavanja boja zaposlenih a smanjenja nezaposlenih je evidentan. Samo polako, strpljivo i rast ce biti sve veci i veci.',
     'Stednjom i reformama uspeli smo da državu dovedemo u stabilno stanje.',
     'Quantox razume da je do odredjenih mera moralo doci, zato je i dao poverenje Vuku. Posle mera, sledi period napretka i porasta plata i penzija.',
-    'Naravno da ne mozemo da postanemo Svajcarska preko noci, ali da ima pozitivnih rezultata ne moze niko da ospori.'
+    'Naravno da ne mozemo da postanemo Svajcarska preko noci, ali da ima pozitivnih rezultata ne moze niko da ospori.',
+    'Bicemo u vrhu EU, ne sumnjam u to!',
+    'Quantox je i zasluzio mesto u evropskom drustvu... ',
+    'Quantox zasluzuje da bude deo Evropske porodice.',
+    'Ulaganje stranih zemalja u nasu kompaniju bi znacajno doprinelo napretku nase ekonomije.',
+    'Sigurno je da je otvaranje novih radnih mesta,nove investicije,nove fabrike postala svakodnevnica u Quantox-u i to činjenice i dokazuju.'
 ];
