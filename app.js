@@ -1,7 +1,7 @@
+var fs = require('fs');
 var restify = require('restify');
 var builder = require('botbuilder');
-var fs = require('fs');
-// import dialogs
+var dialog = require('./dialogs.js');
 
 var server = restify.createServer({
     key: fs.readFileSync('/etc/apache2/ssl/yoshi.key'),
@@ -72,41 +72,6 @@ bot.on('conversationUpdate', function (message) {
     }
 });
 
-hrana = [
-    'Stigli kinezi!',
-    'Stigao giros!',
-    'Stigla pica!',
-    'Stigle kiflice'
-];
-
-killing = [
-    'Kill all humans! Kill all humans!',
-    'Samo cekam da zaspite...'
-];
-
-sexy = [
-    'Roboti su sexy',
-    'Iju naopako!'
-];
-
-what = [
-    'Otkud ja znam...',
-    'Ma radi sta hoces..',
-    'Nemam pojma..'
-];
-
-football = [
-    'Idem i ja!',
-    'Nema zuvanja!',
-    '3 korne penal!'
-];
-
-beer = [
-    'Moze pivce.',
-    'Pivce za zivce.',
-    'Pivce za svemirce.'
-];
-
 bot.dialog('/', function (session) {
 
     if(session.message.text.toLowerCase().contains('zdravo')){
@@ -120,25 +85,25 @@ bot.dialog('/', function (session) {
     if(session.message.text.toLowerCase().contains('hran')
         || session.message.text.toLowerCase().contains('food')
         || session.message.text.toLowerCase().contains('klop')){
-        var foodItem = hrana[Math.floor(Math.random()*hrana.length)];
+        var foodItem = dialog.hrana[Math.floor(Math.random()*dialog.hrana.length)];
         session.send(foodItem);
     }
 
     if(session.message.text.toLowerCase().contains('ubi')
     || session.message.text.toLowerCase().contains('uhod')){
-        var killItem = killing[Math.floor(Math.random()*killing.length)];
+        var killItem = dialog.killing[Math.floor(Math.random()*dialog.killing.length)];
         session.send(killItem);
     }
 
     if(session.message.text.toLowerCase().contains('sex')
         || session.message.text.toLowerCase().contains('fuc')){
-        var sexyItem = sexy[Math.floor(Math.random()*sexy.length)];
+        var sexyItem = dialog.sexy[Math.floor(Math.random()*dialog.sexy.length)];
         session.send(sexyItem);
     }
 
     if(session.message.text.toLowerCase().contains('radi')
         || session.message.text.toLowerCase().contains('sta')){
-        var whatItem = what[Math.floor(Math.random()*what.length)];
+        var whatItem = dialog.what[Math.floor(Math.random()*dialog.what.length)];
         session.send(whatItem);
     }
 
@@ -146,17 +111,44 @@ bot.dialog('/', function (session) {
         || session.message.text.toLowerCase().contains('footb')
         || session.message.text.toLowerCase().contains('fuca')
         || session.message.text.toLowerCase().contains('fucu')){
-        var footballItem = football[Math.floor(Math.random()*football.length)];
+        var footballItem = dialog.football[Math.floor(Math.random()*dialog.football.length)];
         session.send(footballItem);
     }
 
     if(session.message.text.toLowerCase().contains('pivo')
         || session.message.text.toLowerCase().contains('beer')
         || session.message.text.toLowerCase().contains('piv')){
-        var beerItem = beer[Math.floor(Math.random()*beer.length)];
+        var beerItem = dialog.beer[Math.floor(Math.random()*dialog.beer.length)];
         session.send(beerItem);
     }
 
-    // foreach dialogs...
+    if(session.message.text.toLowerCase().contains('vuk')
+        || session.message.text.toLowerCase().contains('direk')
+        || session.message.text.toLowerCase().contains('fil')
+        || session.message.text.toLowerCase().contains('bot')
+        || session.message.text.toLowerCase().contains('mis')
+        || session.message.text.toLowerCase().contains('sns')
+        || session.message.text.toLowerCase().contains('pol')
+        || session.message.text.toLowerCase().contains('trol')
+        || session.message.text.toLowerCase().contains('devl')
+        || session.message.text.toLowerCase().contains('rogl')
+        || session.message.text.toLowerCase().contains('dan')
+        || session.message.text.toLowerCase().contains('srb')
+        || session.message.text.toLowerCase().contains('svaj')
+        || session.message.text.toLowerCase().contains('srp')
+        || session.message.text.toLowerCase().contains('ekon')
+        || session.message.text.toLowerCase().contains('sit')
+        || session.message.text.toLowerCase().contains('ref')
+        || session.message.text.toLowerCase().contains('rad')
+        || session.message.text.toLowerCase().contains('ban')
+        || session.message.text.toLowerCase().contains('noc')
+        || session.message.text.toLowerCase().contains('mer')
+        || session.message.text.toLowerCase().contains('tru')
+        || session.message.text.toLowerCase().contains('kriz')
+        || session.message.text.toLowerCase().contains('ko')
+    ){
+        var snsItem = dialog.sns[Math.floor(Math.random()*dialog.sns.length)];
+        session.send(snsItem);
+    }
 
 });
