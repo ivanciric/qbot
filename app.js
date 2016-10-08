@@ -18,12 +18,6 @@ var connector = new builder.ChatConnector({
     appPassword: ''
 });
 
-
-var optionsEur = {
-    host: 'http://free.currencyconverterapi.com',
-    path: '/api/v3/convert?q=EUR_RSD&compact=y'
-};
-
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
