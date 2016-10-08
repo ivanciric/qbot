@@ -2,10 +2,11 @@ var fs = require('fs');
 var restify = require('restify');
 var builder = require('botbuilder');
 var dialog = require('./dialogs.js');
+var request = require("request");
 
 var server = restify.createServer({
     key: fs.readFileSync('/etc/apache2/ssl/yoshi.key'),
-    certificate: fs.readFileSync('/etc/apache2/ssl/yoshi.crt'),
+    certificate: fs.readFileSync('/etc/apache2/ssl/yoshi.crt')
 });
 
 server.listen(process.env.port || process.env.PORT || 9292, function () {
@@ -16,6 +17,12 @@ var connector = new builder.ChatConnector({
     appId: '',
     appPassword: ''
 });
+
+
+var optionsEur = {
+    host: 'http://free.currencyconverterapi.com',
+    path: '/api/v3/convert?q=EUR_RSD&compact=y'
+};
 
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
@@ -72,14 +79,62 @@ bot.on('conversationUpdate', function (message) {
     }
 });
 
+
 bot.dialog('/', function (session) {
 
+    if(session.message.text.toLowerCase() == 'wifi'
+        || session.message.text.toLowerCase().contains('wifi')){
+        session.send("*SSID:* Quantox (Quantox1)\n\n*PASS:* 14cd918ac");
+    }
+
+
+    if(session.message.text.toLowerCase().contains('kurseur'))
+    {
+        var urlEur = "http://free.currencyconverterapi.com/api/v3/convert?q=EUR_RSD&compact=y";
+
+        request({
+            url: urlEur,
+            json: true
+        }, function (error, response, body) {
+
+            if (!error && response.statusCode === 200)
+            {
+                var kursEur = body.EUR_RSD.val;
+                session.send("Kurs EUR na današnji dan iznosi: " + kursEur);
+            }
+        })
+
+    }
+
+    if(session.message.text.toLowerCase().contains('kursusd'))
+    {
+        var urlUsd = "http://free.currencyconverterapi.com/api/v3/convert?q=USD_RSD&compact=y";
+
+        request({
+            url: urlUsd,
+            json: true
+        }, function (error, response, body) {
+
+            if (!error && response.statusCode === 200)
+            {
+                var kursUsd = body.USD_RSD.val;
+                session.send("Kurs USD na današnji dan iznosi: " + kursUsd);
+            }
+        })
+    }
+
+    var name = session.message.user.name;
+
+    if(name == 'Aleksandar Kaitovic Winnie'){
+        session.send('Tisina tamo Winnie!');
+    }
+
     if(session.message.text.toLowerCase().contains('zdravo')){
-        session.send('Zdravo!');
+        session.send('Zdravo ' + name);
     }
 
     if(session.message.text.toLowerCase().contains('welc')){
-        session.send('Hvala!');
+        session.send('Hvala ' + name);
     }
 
     if(session.message.text.toLowerCase().contains('hran')
@@ -123,29 +178,16 @@ bot.dialog('/', function (session) {
     }
 
     if(session.message.text.toLowerCase().contains('vuk')
-        || session.message.text.toLowerCase().contains('direk')
-        || session.message.text.toLowerCase().contains('fil')
-        || session.message.text.toLowerCase().contains('bot')
-        || session.message.text.toLowerCase().contains('mis')
+        || session.message.text.toLowerCase().contains('uros')
+        || session.message.text.toLowerCase().contains('rogla')
+        || session.message.text.toLowerCase().contains('devla')
+        || session.message.text.toLowerCase().contains('winnie')
+        || session.message.text.toLowerCase().contains('car')
+        || session.message.text.toLowerCase().contains('filip')
+        || session.message.text.toLowerCase().contains('micko')
+        || session.message.text.toLowerCase().contains('misl')
         || session.message.text.toLowerCase().contains('sns')
-        || session.message.text.toLowerCase().contains('pol')
-        || session.message.text.toLowerCase().contains('trol')
-        || session.message.text.toLowerCase().contains('devl')
-        || session.message.text.toLowerCase().contains('rogl')
-        || session.message.text.toLowerCase().contains('dan')
         || session.message.text.toLowerCase().contains('srb')
-        || session.message.text.toLowerCase().contains('svaj')
-        || session.message.text.toLowerCase().contains('srp')
-        || session.message.text.toLowerCase().contains('ekon')
-        || session.message.text.toLowerCase().contains('sit')
-        || session.message.text.toLowerCase().contains('ref')
-        || session.message.text.toLowerCase().contains('rad')
-        || session.message.text.toLowerCase().contains('ban')
-        || session.message.text.toLowerCase().contains('noc')
-        || session.message.text.toLowerCase().contains('mer')
-        || session.message.text.toLowerCase().contains('tru')
-        || session.message.text.toLowerCase().contains('kriz')
-        || session.message.text.toLowerCase().contains('ko')
     ){
         var snsItem = dialog.sns[Math.floor(Math.random()*dialog.sns.length)];
         session.send(snsItem);
