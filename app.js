@@ -260,5 +260,13 @@ bot.dialog('/', function (session) {
 
     }
 
+    /**
+     * Linence server phpstorm
+     */
+    if(text.contains('phpstorm') || text.contains('php storm')){
+
+        session.send('Treba ti licence server za PhpStorm? Mozes da probas ovaj http://jetbrains.tencent.click samo ticu molim te, ovo nisi cuo od mene ;)');
+    }
+
 
 });
