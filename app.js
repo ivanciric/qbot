@@ -207,4 +207,9 @@ bot.dialog('/', function (session) {
         session.send(stevanItem);
     }
 
+    if(session.message.text.toLowerCase().contains('sreder')
+        || session.message.text.toLowerCase().contains('sekac')){
+        var sekacItem = dialog.sekac[Math.floor(Math.random()*dialog.sekac.length)];
+        session.send(sekacItem);
+    }
 });
