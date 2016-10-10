@@ -226,4 +226,35 @@ bot.dialog('/', function (session) {
         var roglaItem = dialog.rogla[Math.floor(Math.random()*dialog.rogla.length)];
         session.send(roglaItem);
     }
+
+
+
+    /**
+     * Ovaj blok je zaduzen za prikaz iznosa jedne valute u drugoj.
+     * Primer: koliko iznosi 16 usd u rsd
+     */
+    var text = session.message.text.toLowerCase();
+    var exchangeOffice = text.match(/([0-9.]+) ([a-z]{3}) (to|u) ([a-z]{3})/i);
+
+    if(exchangeOffice && exchangeOffice.length > 0)
+    {
+        var fromTo = (exchangeOffice[2] + "_" + exchangeOffice[4]).toUpperCase();
+        var currencyUrl = "http://free.currencyconverterapi.com/api/v3/convert?q=" + fromTo + "&compact=y";
+
+        request({
+            url: currencyUrl,
+            json: true
+        }, function (error, response, body) {
+
+            if (!error && response.statusCode === 200)
+            {
+                if(body[fromTo])
+                    session.send( exchangeOffice[0] + " iznosi: " + (body[fromTo].val * exchangeOffice[1]) );
+                else
+                    session.send("Nije mi poznat kurs za " + exchangeOffice[2] + " u " + exchangeOffice[4]);
+            }
+        })
+
+    }
+
 });
