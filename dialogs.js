@@ -116,3 +116,8 @@ exports.sekac = [
     'Sam sam kriv! Trebao sam da posaljem nindze, a ne one budale!',
     'Ne mogu da verujem! Ti prokleti programeri i dalje gmizu!'
 ];
+
+exports.rogla = [
+    'Munem!',
+    'Ja nista i ne jedoh, ebem se u usta'
+];

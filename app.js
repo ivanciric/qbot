@@ -212,4 +212,10 @@ bot.dialog('/', function (session) {
         var sekacItem = dialog.sekac[Math.floor(Math.random()*dialog.sekac.length)];
         session.send(sekacItem);
     }
+
+    if(session.message.text.toLowerCase().contains('rogla')
+        || session.message.text.toLowerCase().contains('mikex')){
+        var roglaItem = dialog.rogla[Math.floor(Math.random()*dialog.rogla.length)];
+        session.send(roglaItem);
+    }
 });
