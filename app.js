@@ -84,171 +84,140 @@ bot.on('conversationUpdate', function (message) {
 
 bot.dialog('/', function (session) {
 
-    if(session.message.text.toLowerCase() == 'wifi'
-        || session.message.text.toLowerCase().contains('wifi')){
+    var text = session.message.text.toLowerCase();
+    var name = session.message.user.name;
+
+    if(text == 'wifi' || text.contains('wifi')){
         session.send("*SSID:* Quantox (Quantox1)\n\n*PASS:* 14cd918ac");
     }
-
-
-    if(session.message.text.toLowerCase().contains('kurseur'))
-    {
-        var urlEur = "http://free.currencyconverterapi.com/api/v3/convert?q=EUR_RSD&compact=y";
-
-        request({
-            url: urlEur,
-            json: true
-        }, function (error, response, body) {
-
-            if (!error && response.statusCode === 200)
-            {
-                var kursEur = body.EUR_RSD.val;
-                session.send("Kurs EUR na današnji dan iznosi: " + kursEur);
-            }
-        })
-
-    }
-
-    if(session.message.text.toLowerCase().contains('kursusd'))
-    {
-        var urlUsd = "http://free.currencyconverterapi.com/api/v3/convert?q=USD_RSD&compact=y";
-
-        request({
-            url: urlUsd,
-            json: true
-        }, function (error, response, body) {
-
-            if (!error && response.statusCode === 200)
-            {
-                var kursUsd = body.USD_RSD.val;
-                session.send("Kurs USD na današnji dan iznosi: " + kursUsd);
-            }
-        })
-    }
-
-    var name = session.message.user.name;
 
     if(name == 'Aleksandar Kaitovic Winnie'){
         session.send('Tisina tamo Winnie!');
     }
 
-    if(session.message.text.toLowerCase().contains('zdravo')){
+    if(text.contains('zdravo')){
         session.send('Zdravo ' + name);
     }
 
-    if(session.message.text.toLowerCase().contains('welc')){
+    if(text.contains('welc')){
         session.send('Hvala ' + name);
     }
 
-    if(session.message.text.toLowerCase().contains('hran')
-        || session.message.text.toLowerCase().contains('food')
-        || session.message.text.toLowerCase().contains('klop')){
-        var foodItem = dialog.hrana[Math.floor(Math.random()*dialog.hrana.length)];
-        session.send(foodItem);
+
+    // dialogs.js driven response function
+    function spawnResponse(varName)
+    {
+        var dialogItem = dialog[varName][Math.floor(Math.random()*dialog[varName].length)];
+        session.send(dialogItem);
     }
 
-    if(session.message.text.toLowerCase().contains('ubi')
-    || session.message.text.toLowerCase().contains('uhod')){
-        var killItem = dialog.killing[Math.floor(Math.random()*dialog.killing.length)];
-        session.send(killItem);
+
+    if(text.contains('hran')
+        || text.contains('food')
+        || text.contains('klop')){
+
+        spawnResponse('hrana'); // 'hrana' is the array name from dialogs.js
     }
 
-    if(session.message.text.toLowerCase().contains('sex')
-        || session.message.text.toLowerCase().contains('fuc')){
-        var sexyItem = dialog.sexy[Math.floor(Math.random()*dialog.sexy.length)];
-        session.send(sexyItem);
+    if(text.contains('ubi')
+        || text.contains('uhod')){
+
+        spawnResponse('killing');
     }
 
-    if(session.message.text.toLowerCase().contains('radi')
-        || session.message.text.toLowerCase().contains('sta')){
-        var whatItem = dialog.what[Math.floor(Math.random()*dialog.what.length)];
-        session.send(whatItem);
+    if(text.contains('sex')
+        || text.contains('fuc')){
+
+        spawnResponse('sexy');
     }
 
-    if(session.message.text.toLowerCase().contains('fudb')
-        || session.message.text.toLowerCase().contains('footb')
-        || session.message.text.toLowerCase().contains('fuca')
-        || session.message.text.toLowerCase().contains('fucu')){
-        var footballItem = dialog.football[Math.floor(Math.random()*dialog.football.length)];
-        session.send(footballItem);
+    if(text.contains('radi')
+        || text.contains('sta')){
+        
+        spawnResponse('what');
     }
 
-    if(session.message.text.toLowerCase().contains('pivo')
-        || session.message.text.toLowerCase().contains('beer')
-        || session.message.text.toLowerCase().contains('piv')){
-        var beerItem = dialog.beer[Math.floor(Math.random()*dialog.beer.length)];
-        session.send(beerItem);
+    if(text.contains('fudb')
+        || text.contains('footb')
+        || text.contains('fuca')
+        || text.contains('fucu')){
+
+        spawnResponse('football');
     }
 
-    if(session.message.text.toLowerCase().contains('vuk')
-        || session.message.text.toLowerCase().contains('uros')
-        || session.message.text.toLowerCase().contains('rogla')
-        || session.message.text.toLowerCase().contains('devla')
-        || session.message.text.toLowerCase().contains('winnie')
-        || session.message.text.toLowerCase().contains('car')
-        || session.message.text.toLowerCase().contains('filip')
-        || session.message.text.toLowerCase().contains('micko')
-        || session.message.text.toLowerCase().contains('misl')
-        || session.message.text.toLowerCase().contains('sns')
-        || session.message.text.toLowerCase().contains('srb')
+    if(text.contains('pivo')
+        || text.contains('beer')
+        || text.contains('piv')){
+
+        spawnResponse('beer');
+    }
+
+    if(text.contains('vuk')
+        || text.contains('uros')
+        || text.contains('rogla')
+        || text.contains('devla')
+        || text.contains('winnie')
+        || text.contains('car')
+        || text.contains('filip')
+        || text.contains('micko')
+        || text.contains('misl')
+        || text.contains('sns')
+        || text.contains('srb')
     ){
-        var snsItem = dialog.sns[Math.floor(Math.random()*dialog.sns.length)];
-        session.send(snsItem);
+        spawnResponse('sns');
     }
 
-    if(session.message.text.toLowerCase().contains('posten')
-    || session.message.text.toLowerCase().contains('fer')){
-        var bibirokItem = dialog.bibirok[Math.floor(Math.random()*dialog.bibirok.length)];
-        session.send(bibirokItem);
+    if(text.contains('posten')
+        || text.contains('fer')){
+
+        spawnResponse('bibirok');
     }
 
-    if(session.message.text.toLowerCase().contains('bobo')
-    || session.message.text.toLowerCase().contains('smrad')){
-        var boboItem = dialog.bobo[Math.floor(Math.random()*dialog.bobo.length)];
-        session.send(boboItem);
+    if(text.contains('bobo')
+        || text.contains('smrad')){
+
+        spawnResponse('bobo');
     }
 
-    if(session.message.text.toLowerCase().contains('stevan')
-        || session.message.text.toLowerCase().contains('marke')
-        || session.message.text.toLowerCase().contains('maraka')
+    if(text.contains('stevan')
+        || text.contains('marke')
+        || text.contains('maraka')
     ){
-        var stevanItem = dialog.stevan[Math.floor(Math.random()*dialog.stevan.length)];
-        session.send(stevanItem);
+        spawnResponse('stevan');
     }
 
-    if(session.message.text.toLowerCase().contains('sreder')
-        || session.message.text.toLowerCase().contains('sekac')){
-        var sekacItem = dialog.sekac[Math.floor(Math.random()*dialog.sekac.length)];
-        session.send(sekacItem);
+    if(text.contains('sreder')
+        || text.contains('sekac')){
+
+        spawnResponse('sekac');
     }
 
-    if(session.message.text.toLowerCase().contains('rogla')
-        || session.message.text.toLowerCase().contains('mikex')){
-        var roglaItem = dialog.rogla[Math.floor(Math.random()*dialog.rogla.length)];
-        session.send(roglaItem);
+    if(text.contains('rogla')
+        || text.contains('mikex')){
+
+        spawnResponse('rogla');
     }
 
+    if(text.contains('ciii')){
 
-    if(session.message.text.toLowerCase().contains('ciii')){
-        var ciiiItem = dialog.ciii[Math.floor(Math.random()*dialog.ciii.length)];
-        session.send(ciiiItem);
+        spawnResponse('ciii');
     }
 
-    if(session.message.text.toLowerCase().contains('unist')
-        || session.message.text.toLowerCase().contains('destroy')){
-        var crushItem = dialog.crush[Math.floor(Math.random()*dialog.crush.length)];
-        session.send(crushItem);
+    if(text.contains('unist')
+        || text.contains('destroy')){
+
+        spawnResponse('crush');
     }
 
-    if(session.message.text.toLowerCase().contains('gojk')){
-        var gojkoItem = dialog.gojko[Math.floor(Math.random()*dialog.gojko.length)];
-        session.send(gojkoItem);
+    if(text.contains('gojk')){
+
+        spawnResponse('gojko');
     }
 
     /**
      * Ovaj blok je zaduzen za prikaz iznosa jedne valute u drugoj.
      * Primer: koliko iznosi 16 usd u rsd
      */
-    var text = session.message.text.toLowerCase();
     var exchangeOffice = text.match(/([0-9.]+) ([a-z]{3}) (to|u) ([a-z]{3})/i);
 
     if(exchangeOffice && exchangeOffice.length > 0)
