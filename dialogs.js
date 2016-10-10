@@ -138,6 +138,12 @@ exports.gojko = [
     'Nemoj da si Igor Sretkov!'
 ];
 
+exports.injustice = [
+    'Ko sme random?',
+    'Ajmo jedan turnir!',
+    'Pazite se batman-a.'
+];
+
 exports.titles = [
     'Unistitelj',
     'Botina',
@@ -158,5 +164,14 @@ exports.titles = [
     'Srbski Vitez',
     'Bananamen',
     'Devetar Cokulic',
-    'Drogeras'
+    'Drogeras',
+    'Manijak',
+    'i nesto danas nisi dobro...',
+    'SOM',
+    'i vidim da ne volis Freda...',
+    'ti si onaj sto hoce da predje u Cosmic.',
+    'preterano konzumiras kiflice.',
+    'zadrzao si se malopre dva sata u wc-u.',
+    'jadni oni koji sede pored tebe...',
+    'preterujes ponekad...'
 ];
