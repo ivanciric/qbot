@@ -193,9 +193,18 @@ bot.dialog('/', function (session) {
         session.send(bibirokItem);
     }
 
-    if(session.message.text.toLowerCase().contains('bobo')){
+    if(session.message.text.toLowerCase().contains('bobo')
+    || session.message.text.toLowerCase().contains('smrad')){
         var boboItem = dialog.bobo[Math.floor(Math.random()*dialog.bobo.length)];
         session.send(boboItem);
+    }
+
+    if(session.message.text.toLowerCase().contains('stevan')
+        || session.message.text.toLowerCase().contains('marke')
+        || session.message.text.toLowerCase().contains('maraka')
+    ){
+        var stevanItem = dialog.stevan[Math.floor(Math.random()*dialog.stevan.length)];
+        session.send(stevanItem);
     }
 
 });

@@ -103,3 +103,10 @@ exports.bobo = [
     'Kako sam pao...',
     'Gde li se denuo...'
 ];
+
+exports.stevan = [
+    'Stevaneee, jes\' to ti?',
+    'Uvek sam gajio simpatije prema tebi, a ne prema onom debelom caletu',
+    'Jel imas dvajes miliona, vratio bih ti brate?',
+    'U ovoj kuci ima samo jedan magarac, a to sam jaaa!'
+];
