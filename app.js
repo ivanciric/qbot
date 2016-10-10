@@ -212,4 +212,10 @@ bot.dialog('/', function (session) {
         var sekacItem = dialog.sekac[Math.floor(Math.random()*dialog.sekac.length)];
         session.send(sekacItem);
     }
+
+    if(session.message.text.toLowerCase().contains('ciii')){
+        var ciiiItem = dialog.ciii[Math.floor(Math.random()*dialog.ciii.length)];
+        session.send(ciiiItem);
+    }
+
 });
