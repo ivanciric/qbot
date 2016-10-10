@@ -42,7 +42,7 @@ bot.on('contactRelationUpdate', function (message) {
 });
 
 bot.on('typing', function (message) {
-    // User is typing
+    // User is typing...
 });
 
 bot.on('deleteUserData', function (message) {
