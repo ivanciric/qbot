@@ -121,3 +121,19 @@ exports.rogla = [
     'Munem!',
     'Ja nista i ne jedoh, ebem se u usta'
 ];
+
+exports.ciii = [
+    'CUUUUIIIIIMMMM!'
+];
+
+exports.crush = [
+    'GRUNDY SMASH!!!',
+    'Napravicu od tebe pekmez od sljiva!!!',
+    'Unistenje!!!'
+];
+
+exports.gojko = [
+    'Gojko ionako nema palac.',
+    'Gojko sisa?',
+    'Nemoj da si Igor Sretkov!'
+];
