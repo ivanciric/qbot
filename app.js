@@ -218,4 +218,20 @@ bot.dialog('/', function (session) {
         var roglaItem = dialog.rogla[Math.floor(Math.random()*dialog.rogla.length)];
         session.send(roglaItem);
     }
+
+    if(session.message.text.toLowerCase().contains('ciii')){
+        var ciiiItem = dialog.ciii[Math.floor(Math.random()*dialog.ciii.length)];
+        session.send(ciiiItem);
+    }
+
+    if(session.message.text.toLowerCase().contains('unist')
+        || session.message.text.toLowerCase().contains('destroy')){
+        var crushItem = dialog.crush[Math.floor(Math.random()*dialog.crush.length)];
+        session.send(crushItem);
+    }
+
+    if(session.message.text.toLowerCase().contains('gojk')){
+        var crushItem = dialog.gojko[Math.floor(Math.random()*dialog.gojko.length)];
+        session.send(gojkoItem);
+    }
 });
