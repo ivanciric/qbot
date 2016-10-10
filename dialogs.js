@@ -8,7 +8,8 @@ exports.hrana = [
     'Ljudi, BamBam i ja smo kupili voce, uzivajte!',
     'Voce je u kuhinji.',
     'Cajevi i kafa su u kuhinji.',
-    'Uros je rekao da slobodno uzmete proteine iz kuhinje.'
+    'Uros je rekao da slobodno uzmete proteine iz kuhinje.',
+    'http://cdn.coolinarika.net/image/670fa971ad76db829da5258a5fac30c2_view_l.jpg?v=3'
 ];
 
 exports.killing = [
@@ -28,7 +29,8 @@ exports.sexy = [
     'Sta ti pade na pamet, cccc..',
     'Zovem 92... Molim sacekajte..',
     'Moooore!',
-    'Sunce ti kalaisano... Ne moze!'
+    'Sunce ti kalaisano... Ne moze!',
+    'http://lupchan.org/s4s/src/1373863054198.png'
 ];
 
 exports.what = [
@@ -60,7 +62,9 @@ exports.beer = [
     'Ma vec sam pijan..',
     'Pivo: Merilo vrednosti pri ocenjivanju rejtinga i skupoce novootvorenog ugostiteljskog objekta.',
     'Jedno je taman, dva su malo...',
-    'Osnovna valuta iskusnih alkoholicara...'
+    'Osnovna valuta iskusnih alkoholicara...',
+    'http://lupchan.org/s4s/src/1373863054198.png',
+    'http://s3.amazonaws.com/spoonuniversi-wpengine/spoonuniversi/wp-content/uploads/sites/170/2016/03/o-PINT-GLASS-BEER-facebook1.jpg'
 ];
 
 exports.sns = [
@@ -135,7 +139,8 @@ exports.crush = [
 exports.gojko = [
     'Gojko ionako nema palac.',
     'Gojko sisa?',
-    'Nemoj da si Igor Sretkov!'
+    'Nemoj da si Igor Sretkov!',
+    'http://www.ew.com/sites/default/files/styles/tout_image_612x380/public/i/imgs/110121/The-Right_320_0.jpg?itok=TdUmexjk'
 ];
 
 exports.injustice = [
