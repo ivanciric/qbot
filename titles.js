@@ -4,5 +4,19 @@ exports.titles = [
     'Pornicar',
     'Ratnik',
     'Viking',
-    'Samuraj'
+    'Samuraj',
+    'Skitnica',
+    'Alkos',
+    'Devojcica',
+    'i povecala ti se kilaza...',
+    'Zutokljunac',
+    'i sexualno si opterecen',
+    'Seljak',
+    'Smeker',
+    'Bandit',
+    'Rusofil',
+    'Srbski Vitez',
+    'Bananamen',
+    'Devetar Cokulic',
+    'Drogeras'
 ];
