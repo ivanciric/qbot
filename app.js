@@ -227,7 +227,7 @@ bot.dialog('/', function (session) {
         session.send(roglaItem);
     }
 
-<<<<<<< HEAD
+
     if(session.message.text.toLowerCase().contains('ciii')){
         var ciiiItem = dialog.ciii[Math.floor(Math.random()*dialog.ciii.length)];
         session.send(ciiiItem);
@@ -243,8 +243,6 @@ bot.dialog('/', function (session) {
         var gojkoItem = dialog.gojko[Math.floor(Math.random()*dialog.gojko.length)];
         session.send(gojkoItem);
     }
-=======
-
 
     /**
      * Ovaj blok je zaduzen za prikaz iznosa jedne valute u drugoj.
@@ -274,5 +272,5 @@ bot.dialog('/', function (session) {
 
     }
 
->>>>>>> 51ffe9c263c3b46a2ea7fa3c644e75055cee7b37
+
 });
