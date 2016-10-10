@@ -103,6 +103,11 @@ bot.dialog('/', function (session) {
         session.send('Hvala ' + name);
     }
 
+    var titles = ['Unistitelj', 'Botina', 'Pornicar', 'Ratnik', 'Viking', 'Samuraj'];
+    var randomTitle = titles[Math.floor(Math.random()*titles.length)];
+    if(text.contains('zovem')){
+        session.send('Ti se zoves ' + name + ' ' + randomTitle);
+    }
 
     // dialogs.js driven response function
     function spawnResponse(varName)
