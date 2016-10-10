@@ -137,3 +137,26 @@ exports.gojko = [
     'Gojko sisa?',
     'Nemoj da si Igor Sretkov!'
 ];
+
+exports.titles = [
+    'Unistitelj',
+    'Botina',
+    'Pornicar',
+    'Ratnik',
+    'Viking',
+    'Samuraj',
+    'Skitnica',
+    'Alkos',
+    'Devojcica',
+    'i povecala ti se kilaza...',
+    'Zutokljunac',
+    'i sexualno si opterecen',
+    'Seljak',
+    'Smeker',
+    'Bandit',
+    'Rusofil',
+    'Srbski Vitez',
+    'Bananamen',
+    'Devetar Cokulic',
+    'Drogeras'
+];

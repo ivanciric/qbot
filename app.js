@@ -104,18 +104,27 @@ bot.dialog('/', function (session) {
         session.send('Hvala ' + name);
     }
 
-    if(text.contains('zovem')){
-        var randomTitle = titles.titles[Math.floor(Math.random()*titles.titles.length)];
-        session.send('Ti se zoves ' + name + ' ' + randomTitle);
-    }
+
 
     // dialogs.js driven response function
-    function spawnResponse(varName)
+    function spawnResponse(varName, itemOnly)
     {
         var dialogItem = dialog[varName][Math.floor(Math.random()*dialog[varName].length)];
-        session.send(dialogItem);
+
+        if(itemOnly){
+            return dialogItem;
+        }else{
+            session.send(dialogItem);
+        }
+
     }
 
+    if(text.contains('zovem')){
+
+        var randomTitle = spawnResponse('titles', 1);
+
+        session.send('Ti se zoves ' + name + ' ' + randomTitle);
+    }
 
     if(text.contains('hran')
         || text.contains('food')
