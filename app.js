@@ -104,6 +104,7 @@ bot.dialog('/', function (session) {
     }
 
     var titles = ['Unistitelj', 'Botina', 'Pornicar', 'Ratnik', 'Viking', 'Samuraj'];
+
     var randomTitle = titles[Math.floor(Math.random()*titles.length)];
     if(text.contains('zovem')){
         session.send('Ti se zoves ' + name + ' ' + randomTitle);
@@ -238,9 +239,15 @@ bot.dialog('/', function (session) {
             if (!error && response.statusCode === 200)
             {
                 if(body[fromTo])
-                    session.send( exchangeOffice[0] + " iznosi: " + (body[fromTo].val * exchangeOffice[1]) );
-                else
+                {
+                    var conversionResult = parseFloat(( body[fromTo].val * exchangeOffice[1] )).toFixed(2);
+
+                    session.send( exchangeOffice[0] + " iznosi: " + conversionResult );
+
+                }else{
                     session.send("Nije mi poznat kurs za " + exchangeOffice[2] + " u " + exchangeOffice[4]);
+                }
+
             }
         })
 
