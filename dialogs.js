@@ -95,3 +95,11 @@ exports.bibirok = [
     'Vazno je da ima tabanja.',
     'U redu gazda.'
 ];
+
+exports.bobo = [
+    'SMRAAADEEEE!!!',
+    'BOBO SMRADEEEE!',
+    'Niko od nas ne bi trebao da seta saaam, a narocito ne tii...',
+    'Kako sam pao...',
+    'Gde li se denuo...'
+];

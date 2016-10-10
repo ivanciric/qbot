@@ -193,4 +193,9 @@ bot.dialog('/', function (session) {
         session.send(bibirokItem);
     }
 
+    if(session.message.text.toLowerCase().contains('bobo')){
+        var boboItem = dialog.bobo[Math.floor(Math.random()*dialog.bobo.length)];
+        session.send(boboItem);
+    }
+
 });
