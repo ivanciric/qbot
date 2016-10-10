@@ -105,7 +105,7 @@ bot.dialog('/', function (session) {
     }
 
     if(text.contains('zovem')){
-        var randomTitle = titles[Math.floor(Math.random()*titles.length)];
+        var randomTitle = titles.titles[Math.floor(Math.random()*titles.titles.length)];
         session.send('Ti se zoves ' + name + ' ' + randomTitle);
     }
 
