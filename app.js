@@ -227,6 +227,11 @@ bot.dialog('/', function (session) {
         spawnResponse('gojko');
     }
 
+    if(text.contains('injustice')){
+
+        spawnResponse('injustice');
+    }
+
     /**
      * Ovaj blok je zaduzen za prikaz iznosa jedne valute u drugoj.
      * Primer: koliko iznosi 16 usd u rsd
