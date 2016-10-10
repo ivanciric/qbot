@@ -42,7 +42,7 @@ bot.on('contactRelationUpdate', function (message) {
 });
 
 bot.on('typing', function (message) {
-    // User is typing
+    // User is typing...
 });
 
 bot.on('deleteUserData', function (message) {
@@ -227,6 +227,7 @@ bot.dialog('/', function (session) {
         session.send(roglaItem);
     }
 
+<<<<<<< HEAD
     if(session.message.text.toLowerCase().contains('ciii')){
         var ciiiItem = dialog.ciii[Math.floor(Math.random()*dialog.ciii.length)];
         session.send(ciiiItem);
@@ -242,4 +243,36 @@ bot.dialog('/', function (session) {
         var gojkoItem = dialog.gojko[Math.floor(Math.random()*dialog.gojko.length)];
         session.send(gojkoItem);
     }
+=======
+
+
+    /**
+     * Ovaj blok je zaduzen za prikaz iznosa jedne valute u drugoj.
+     * Primer: koliko iznosi 16 usd u rsd
+     */
+    var text = session.message.text.toLowerCase();
+    var exchangeOffice = text.match(/([0-9.]+) ([a-z]{3}) (to|u) ([a-z]{3})/i);
+
+    if(exchangeOffice && exchangeOffice.length > 0)
+    {
+        var fromTo = (exchangeOffice[2] + "_" + exchangeOffice[4]).toUpperCase();
+        var currencyUrl = "http://free.currencyconverterapi.com/api/v3/convert?q=" + fromTo + "&compact=y";
+
+        request({
+            url: currencyUrl,
+            json: true
+        }, function (error, response, body) {
+
+            if (!error && response.statusCode === 200)
+            {
+                if(body[fromTo])
+                    session.send( exchangeOffice[0] + " iznosi: " + (body[fromTo].val * exchangeOffice[1]) );
+                else
+                    session.send("Nije mi poznat kurs za " + exchangeOffice[2] + " u " + exchangeOffice[4]);
+            }
+        })
+
+    }
+
+>>>>>>> 51ffe9c263c3b46a2ea7fa3c644e75055cee7b37
 });
