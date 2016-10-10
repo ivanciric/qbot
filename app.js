@@ -187,4 +187,10 @@ bot.dialog('/', function (session) {
         session.send(snsItem);
     }
 
+    if(session.message.text.toLowerCase().contains('posten')
+    || session.message.text.toLowerCase().contains('fer')){
+        var bibirokItem = dialog.bibirok[Math.floor(Math.random()*dialog.bibirok.length)];
+        session.send(bibirokItem);
+    }
+
 });

@@ -88,3 +88,10 @@ exports.sns = [
     'Svako novo radno mesto u Quantox-u je bitno za Srbiju',
     'Svaka cast Vuku,otvaraju se nova radna mesta za nase mlade ljude.'
 ];
+
+exports.bibirok = [
+    'I mi se tako ponekad osecamo gazda...',
+    'Pa manje viseeee... u stvari manje, mnogo manje.',
+    'Vazno je da ima tabanja.',
+    'U redu gazda.'
+];
