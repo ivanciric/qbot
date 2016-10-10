@@ -239,7 +239,7 @@ bot.dialog('/', function (session) {
     }
 
     if(session.message.text.toLowerCase().contains('gojk')){
-        var crushItem = dialog.gojko[Math.floor(Math.random()*dialog.gojko.length)];
+        var gojkoItem = dialog.gojko[Math.floor(Math.random()*dialog.gojko.length)];
         session.send(gojkoItem);
     }
 });
