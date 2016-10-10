@@ -1,21 +1,29 @@
-var fs = require('fs');
+var fs      = require('fs');
 var restify = require('restify');
 var builder = require('botbuilder');
-var dialog = require('./dialogs.js');
+var dialog  = require('./dialogs.js');
 var request = require("request");
+var env     = require("./env.js");
 
-var server = restify.createServer({
-    key: fs.readFileSync('/etc/apache2/ssl/yoshi.key'),
-    certificate: fs.readFileSync('/etc/apache2/ssl/yoshi.crt')
-});
+var serverOptions = {};
+
+if(env.environment != 'DEVELOPMENT') {
+
+    serverOptions = {
+        key: fs.readFileSync( env.key ),
+        certificate: fs.readFileSync( env.certificate )
+    };
+}
+
+var server = restify.createServer(serverOptions);
 
 server.listen(process.env.port || process.env.PORT || 9292, function () {
     console.log('%s listening to %s', server.name, server.url);
 });
 
 var connector = new builder.ChatConnector({
-    appId: '',
-    appPassword: ''
+    appId: env.appId,
+    appPassword: env.appPassword
 });
 
 var bot = new builder.UniversalBot(connector);
