@@ -110,3 +110,9 @@ exports.stevan = [
     'Jel imas dvajes miliona, vratio bih ti brate?',
     'U ovoj kuci ima samo jedan magarac, a to sam jaaa!'
 ];
+
+exports.sekac = [
+    'Budalaaa... Ne shvata da je taj plan smislio genijalac!',
+    'Sam sam kriv! Trebao sam da posaljem nindze, a ne one budale!',
+    'Ne mogu da verujem! Ti prokleti programeri i dalje gmizu!'
+];
