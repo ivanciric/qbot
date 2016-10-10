@@ -120,3 +120,9 @@ exports.sekac = [
 exports.ciii = [
     'CUUUUIIIIIMMMM!'
 ];
+
+exports.crush = [
+    'GRUNDY SMASH!!!',
+    'Napravicu od tebe pekmez od sljiva!!!',
+    'Unistenje!!!'
+];

@@ -218,4 +218,10 @@ bot.dialog('/', function (session) {
         session.send(ciiiItem);
     }
 
+    if(session.message.text.toLowerCase().contains('unist')
+        || session.message.text.toLowerCase().contains('destroy')){
+        var crushItem = dialog.crush[Math.floor(Math.random()*dialog.crush.length)];
+        session.send(crushItem);
+    }
+
 });
