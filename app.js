@@ -2,6 +2,7 @@ var fs      = require('fs');
 var restify = require('restify');
 var builder = require('botbuilder');
 var dialog  = require('./dialogs.js');
+var titles = require('./titles.js');
 var request = require("request");
 var env     = require("./env.js");
 
@@ -103,10 +104,8 @@ bot.dialog('/', function (session) {
         session.send('Hvala ' + name);
     }
 
-    var titles = ['Unistitelj', 'Botina', 'Pornicar', 'Ratnik', 'Viking', 'Samuraj'];
-
-    var randomTitle = titles[Math.floor(Math.random()*titles.length)];
     if(text.contains('zovem')){
+        var randomTitle = titles[Math.floor(Math.random()*titles.length)];
         session.send('Ti se zoves ' + name + ' ' + randomTitle);
     }
 
