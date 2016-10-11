@@ -149,6 +149,19 @@ exports.injustice = [
     'Pazite se batman-a.'
 ];
 
+exports.music = [
+    'https://www.youtube.com/watch?v=Cz3O0JftA5w',
+    'https://www.youtube.com/watch?v=BRQLY0-pUNQ',
+    'https://www.youtube.com/watch?v=JZ_Zahl9VXU',
+    'https://www.youtube.com/watch?v=h4YvkZeLrjs',
+    'https://www.youtube.com/watch?v=X7kZVH849Eo',
+    'https://www.youtube.com/watch?v=QCahD0M9cv4',
+    'https://www.youtube.com/watch?v=e8zhaiURnbU',
+    'https://www.youtube.com/watch?v=g6sMc9f0fKY',
+    'https://www.youtube.com/watch?v=HZa1iFO0Juk',
+    'https://www.youtube.com/watch?v=jLLrLA9QmsE'
+];
+
 exports.titles = [
     'Unistitelj',
     'Botina',
