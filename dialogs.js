@@ -202,10 +202,23 @@ exports.titles = [
     'i nemas bas obzira prema kolegama'
 ];
 
-exports.relationships = [
+exports.relationshipsPositive = [
+    'Volite se kao Chonsy i Dzemper.',
+    'Ne stidite se vase ljubavi',
+    'Mala mala mala, grupa pedera',
+    'Kakva ljubav....',
+    'Zaljubiska :)',
+    'mmmmmmm :)',
+    'heheehhe prelepoooooo'
+];
+
+exports.relationshipsNegative = [
     'Dakle samo sto se ne pokoljete.',
     'Poput macke i misa.',
     'Nesto nalik Jogija i Ace Lukasa',
     'Volite se kao Chonsy i Dzemper.',
-    'Ne stidite se vase ljubavi'
+    'Ne stidite se vase ljubavi',
+    'Bilo bi dobro da crkne jedan, da vas ne gledamo.',
+    'K\'o cigani',
+    'Ju, vi ste bas ugasili.'
 ];
