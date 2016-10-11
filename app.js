@@ -280,5 +280,18 @@ bot.dialog('/', function (session) {
         session.send('Treba ti licence server za PhpStorm? Mozes da probas ovaj http://jetbrains.tencent.click samo ticu molim te, ovo nisi cuo od mene ;)');
     }
 
+    /**
+     * Relationships
+     */
+    var relationshipQuestion = text.match(/([a-z]) (with|sa) ([a-z])/i);
+
+    if(relationshipQuestion && relationshipQuestion.length > 0){
+
+        var percentage = Math.floor(Math.random() * 99) + 1;
+        var randomRelationship = spawnResponse('relationships', 1);
+
+        session.send('Vas dvoje se slazete ' + percentage + '% ' + randomRelationship);
+
+    }
 
 });

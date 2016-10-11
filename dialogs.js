@@ -201,3 +201,12 @@ exports.titles = [
     'stvarno smaras, pitao si vec 20 puta.',
     'i nemas bas obzira prema kolegama'
 ];
+
+exports.relationships = [
+    'Dakle samo sto se ne pokoljete.',
+    'Poput macke i misa.',
+    'Nesto nalik Jogija i Ace Lukasa',
+
+    'Volite se kao Chonsy i Dzemper.',
+    'Ne stidite se vase ljubavi'
+]
