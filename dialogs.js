@@ -178,5 +178,13 @@ exports.titles = [
     'preterano konzumiras kiflice.',
     'zadrzao si se malopre dva sata u wc-u.',
     'jadni oni koji sede pored tebe...',
-    'preterujes ponekad...'
+    'preterujes ponekad...',
+    'Nigger',
+    'video sam da kopas po djubretu u kuhinji',
+    'ladno covece ne znas kako se zoves',
+    'i vreme je da krenes sa Janom u prodavnicu.',
+    'i ne nosis gace, nikada i nisi.',
+    'i uvece se oblacis u zensko.',
+    'stvarno smaras, pitao si vec 20 puta.',
+    'i nemas bas obzira prema kolegama'
 ];
