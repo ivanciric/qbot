@@ -289,7 +289,12 @@ bot.dialog('/', function (session) {
     if(relationshipQuestion && relationshipQuestion.length > 0){
 
         var percentage = Math.floor(Math.random() * 99) + 1;
-        var randomRelationship = spawnResponse('relationships', 1);
+
+        if(percentage<50){
+            var randomRelationship = spawnResponse('relationshipsNegative', 1);
+        } else {
+            var randomRelationship = spawnResponse('relationshipsPositive', 1);
+        }
 
         session.send('Vas dvoje se slazete ' + percentage + '% ' + randomRelationship);
 
