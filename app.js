@@ -104,7 +104,6 @@ bot.dialog('/', function (session) {
     }
 
 
-
     // dialogs.js driven response function
     function spawnResponse(varName, itemOnly)
     {
@@ -115,7 +114,6 @@ bot.dialog('/', function (session) {
         }else{
             session.send(dialogItem);
         }
-
     }
 
     if(text.contains('zovem')){
@@ -290,10 +288,10 @@ bot.dialog('/', function (session) {
 
         var percentage = Math.floor(Math.random() * 99) + 1;
 
-        if(percentage<50){
-            var randomRelationship = spawnResponse('relationshipsNegative', 1);
-        } else {
-            var randomRelationship = spawnResponse('relationshipsPositive', 1);
+        var randomRelationship = spawnResponse('relationshipsPositive', 1);
+
+        if(percentage < 50){
+            randomRelationship = spawnResponse('relationshipsNegative', 1);
         }
 
         session.send('Vas dvoje se slazete ' + percentage + '% ' + randomRelationship);
