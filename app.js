@@ -284,7 +284,7 @@ bot.dialog('/', function (session) {
     /**
      * Relationships
      */
-    var relationshipQuestion = text.match(/([a-z]) (with|sa|<3) ([a-z])/i);
+    var relationshipQuestion = text.match(/([a-z]) (with|sa) ([a-z])/i);
 
     if(relationshipQuestion && relationshipQuestion.length > 0){
 
@@ -292,7 +292,6 @@ bot.dialog('/', function (session) {
         var randomRelationship = spawnResponse('relationships', 1);
 
         session.send('Vas dvoje se slazete ' + percentage + '% ' + randomRelationship);
-
     }
 
     /**
