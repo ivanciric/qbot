@@ -284,7 +284,7 @@ bot.dialog('/', function (session) {
     /**
      * Relationships
      */
-    var relationshipQuestion = text.match(/([a-z]) (with|sa) ([a-z])/i);
+    var relationshipQuestion = text.match(/([a-z]) (with|sa|<3) ([a-z])/i);
 
     if(relationshipQuestion && relationshipQuestion.length > 0){
 
