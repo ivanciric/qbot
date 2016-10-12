@@ -209,7 +209,10 @@ exports.relationshipsPositive = [
     'Kakva ljubav....',
     'Zaljubiska :)',
     'mmmmmmm :)',
-    'heheehhe prelepoooooo'
+    'heheehhe prelepoooooo',
+    'bas ste lepi zajedno :)',
+    'hihi slatki ste :)',
+    'Poljubite se da svi vidimo kako je lepo voleti.'
 ];
 
 exports.relationshipsNegative = [
@@ -220,5 +223,27 @@ exports.relationshipsNegative = [
     'Ne stidite se vase ljubavi',
     'Bilo bi dobro da crkne jedan, da vas ne gledamo.',
     'K\'o cigani',
-    'Ju, vi ste bas ugasili.'
+    'Ju, vi ste bas ugasili.',
+    'Kao Shaggy i narodnjaci',
+    'Kao nindza kornjace i Sreder',
+    'Kasandra i Randu su cak bolji par od vas.'
 ];
+
+exports.kingEmperor = [
+    'Ma ja sam najbolji!',
+    'Veci sam baja od bilo koga ovde.',
+    'Ma IZUVAM!'
+];
+
+exports.faktura = [
+    'Bez tih faktura ne bi ni bili ovde.',
+    'Jedva cekam da Milan izvrsi uplatu.',
+    'Saljite fakturu!'
+];
+
+exports.creator = [
+    'Nisam video ko me napravio, mislim da su licili na gmizavce.',
+    'Mene su napravili renesansni slikari'
+];
+
+
