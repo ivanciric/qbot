@@ -237,6 +237,24 @@ bot.dialog('/', function (session) {
         spawnResponse('music');
     }
 
+    if(text.contains('kralj')
+        || text.contains('car')
+    ){
+        spawnResponse('kingEmperor');
+    }
+
+    if(text.contains('faktur')
+    ){
+        spawnResponse('faktura');
+    }
+
+    if(text.contains('napravio')
+        || text.contains('kreator')
+        || text.contains('creator')
+    ){
+        spawnResponse('creator');
+    }
+
     /**
      * Ovaj blok je zaduzen za prikaz iznosa jedne valute u drugoj.
      * Primer: koliko iznosi 16 usd u rsd
