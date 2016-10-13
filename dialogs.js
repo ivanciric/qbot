@@ -146,7 +146,8 @@ exports.gojko = [
 exports.injustice = [
     'Ko sme random?',
     'Ajmo jedan turnir!',
-    'Pazite se batman-a.'
+    'Pazite se batman-a.',
+    'Banujte doomsday-a'
 ];
 
 exports.music = [
@@ -199,7 +200,8 @@ exports.titles = [
     'i ne nosis gace, nikada i nisi.',
     'i uvece se oblacis u zensko.',
     'stvarno smaras, pitao si vec 20 puta.',
-    'i nemas bas obzira prema kolegama'
+    'i nemas bas obzira prema kolegama',
+    'i vrsis veliku nuzdu u Boss-u krisom'
 ];
 
 exports.relationshipsPositive = [
@@ -219,18 +221,17 @@ exports.relationshipsNegative = [
     'Dakle samo sto se ne pokoljete.',
     'Poput macke i misa.',
     'Nesto nalik Jogija i Ace Lukasa',
-    'Volite se kao Chonsy i Dzemper.',
-    'Ne stidite se vase ljubavi',
     'Bilo bi dobro da crkne jedan, da vas ne gledamo.',
     'K\'o cigani',
     'Ju, vi ste bas ugasili.',
     'Kao Shaggy i narodnjaci',
     'Kao nindza kornjace i Sreder',
-    'Kasandra i Randu su cak bolji par od vas.'
+    'Kasandra i Randu su cak bolji par od vas.',
+    'Kod Filipa na razgovor!'
 ];
 
 exports.kingEmperor = [
-    'Ma ja sam najbolji!',
+    'TATA!',
     'Veci sam baja od bilo koga ovde.',
     'Ma IZUVAM!'
 ];
