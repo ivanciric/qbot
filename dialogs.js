@@ -246,5 +246,3 @@ exports.creator = [
     'Nisam video ko me napravio, mislim da su licili na gmizavce.',
     'Mene su napravili renesansni slikari'
 ];
-
-
