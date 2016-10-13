@@ -152,11 +152,11 @@ intelligence.prototype.think = function(text) {
     }
 
     if(text.contains('zdravo')){
-        this.session.send('Zdravo ' + name);
+        this.session.send('Zdravo ' + this.name);
     }
 
     if(text.contains('welc')){
-        this.session.send('Hvala ' + name);
+        this.session.send('Hvala ' + this.name);
     }
 
 };
