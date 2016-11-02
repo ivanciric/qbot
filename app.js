@@ -7,6 +7,7 @@ var dialog  = require('./dialogs');
 var builder = require('botbuilder');
 var Exchange = require("./exchange");
 var Responder = require("./responder");
+var Meme = require("./meme");
 var Intelligence = require("./intelligence");
 var Relationships = require("./relationships");
 
@@ -47,6 +48,7 @@ bot.dialog('/', function (session) {
     var relationships = new Relationships(responder);
     var exchange = new Exchange();
     var intelligence = new Intelligence(responder, session, name);
+    var meme = new Meme();
 
     /**
      * Main responder
@@ -92,6 +94,33 @@ bot.dialog('/', function (session) {
     {
         return weather.fetchTemp(function(temp){
             session.send( temp );
+        });
+    }
+
+    /**
+     * Meme - generate meme.
+     *
+     * usage: meme {memeIdentifier}/{upperText}/{lowerText}
+     * ex: meme buzz/jokers/jokers-everywhere
+     *
+     * Texts are typed as url friendly slugs.
+     *
+     * You can get the meme identifiers list by typing "memes".
+     */
+    var memeData = text.match(/(meme) (.*)/i);
+
+    if(memeData && memeData.length > 0)
+    {
+        return meme.make(memeData[2], function(memeImg){
+            session.send( memeImg );
+        });
+    }
+
+    if(text.contains('memes'))
+    {
+        return meme.list(function(memes){
+
+            session.send( memes );
         });
     }
 
