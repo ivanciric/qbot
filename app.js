@@ -73,9 +73,7 @@ bot.dialog('/', function (session) {
      */
     if(text.contains('phpstorm') || text.contains('php storm')){
 
-        session.send('Treba ti licence server za PhpStorm? Mozes da probas ove: http://jetbrains.tencent.click, ' +
-            'http://172.245.22.235:1017, http://idea.imsxm.com/, http://mcpmcc.com:1017 samo ' +
-            'ticu molim te, ovo nisi cuo od mene ;)');
+        session.send('PhpStorm is the best IDE for PHP!');
     }
 
     /**
