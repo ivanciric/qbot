@@ -6,6 +6,8 @@ function transliterator(responder) {
 
 transliterator.prototype.convert = function(cyrillicArray, callback) {
 
+    var originalText = cyrillicArray[1];
+
     var Cyr2Lat = {
         "а" : "a",
         "б" : "b",
@@ -74,4 +76,14 @@ transliterator.prototype.convert = function(cyrillicArray, callback) {
         "Џ" : "Dž"
     };
 
+    var value = originalText.split('');
+
+    for( var i=0; i < value.length; i++){
+
+        value[i] = (Cyr2Lat[value[i]] && Cyr2Lat[value[i]] != "") ? Cyr2Lat[value[i]] : value[i];
+    }
+
+    var result = value.join('');
+
+    callback( result );
 };

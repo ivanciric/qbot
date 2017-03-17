@@ -74,7 +74,7 @@ bot.dialog('/', function (session) {
      * Transliteration block
      * Ex: cir2lat some-latin-text
      */
-    var cyrillic = text.match(/(cir2lat) ([a-z]{3})/i);
+    var cyrillic = text.match(/cir2lat(.*)/);
 
     if(cyrillic && cyrillic.length > 0)
     {
