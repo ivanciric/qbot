@@ -10,6 +10,7 @@ var Responder = require("./responder");
 var Meme = require("./meme");
 var Intelligence = require("./intelligence");
 var Relationships = require("./relationships");
+var Transliterator = require("./transliterate");
 
 var serverOptions = {};
 
@@ -47,6 +48,7 @@ bot.dialog('/', function (session) {
     var weather = new Weather(session);
     var relationships = new Relationships(responder);
     var exchange = new Exchange();
+    var transliterator = new Transliterator();
     var intelligence = new Intelligence(responder, session, name);
     var meme = new Meme();
 
@@ -65,6 +67,19 @@ bot.dialog('/', function (session) {
     {
         return exchange.convert(exchangeOffice, function(conversion){
             session.send( conversion );
+        });
+    }
+
+    /**
+     * Transliteration block
+     * Ex: cir2lat some-latin-text
+     */
+    var cyrillic = text.match(/(cir2lat) ([a-z]{3})/i);
+
+    if(cyrillic && cyrillic.length > 0)
+    {
+        return transliterator.convert(cyrillic, function(result){
+            session.send( result );
         });
     }
 
