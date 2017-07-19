@@ -148,7 +148,7 @@ intelligence.prototype.think = function(text) {
     }
 
     if(text == 'wifi' || text.contains('wifi')){
-        this.session.send("*SSID:* Quantox (Quantox1)\n\n*PASS:* 14cd918ac");
+        this.session.send("*SSID:* Quantox (Quantox1, Quantox2)\n\n*PASS:* 19qt918ac");
     }
 
     if(text.contains('zdravo')){
@@ -157,6 +157,10 @@ intelligence.prototype.think = function(text) {
 
     if(text.contains('welc')){
         this.session.send('Hvala ' + this.name);
+    }
+
+    if(text.contains('yeah')){
+        this.session.send('https://youtu.be/rFTRmjimtCc?t=2s');
     }
 
 };
