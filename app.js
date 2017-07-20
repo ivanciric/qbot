@@ -3,6 +3,7 @@ var env     = require("./env");
 var request = require("request");
 var restify = require('restify');
 var Weather = require("./weather");
+var Lights = require("./lights");
 var dialog  = require('./dialogs');
 var builder = require('botbuilder');
 var Exchange = require("./exchange");
@@ -53,6 +54,7 @@ bot.dialog('/', function (session) {
     var transliterator = new Transliterator();
     var intelligence = new Intelligence(responder, session, name);
     var meme = new Meme();
+    var lights = new Lights();
 
     /**
      * Main responder
@@ -149,8 +151,26 @@ bot.dialog('/', function (session) {
         }else{
             session.send( '"' + klimaCommand + '" nije validna komanda. Foooo! (try power)');
         }
+    }
 
+    /**
+     * Lights control
+     *
+     */
+    var lightsData = text.match(/(svetlo) (.*) (.*)/i);
 
+    if(lightsData && lightsData.length > 0)
+    {
+        var lightName = lightsData[2];
+        var lightCommand = lightsData[3];
+
+        if(lightCommand != 'on' && lightCommand != 'off'){
+            session.send( '"' + lightCommand + '" nije validna komanda za prosvetljenje.');
+        }
+
+        return lights.switch(env.lightsUrl, env.lightsMap[lightName], lightCommand, function(response){
+            session.send( response );
+        });
     }
 
     if(text.contains('memes'))
