@@ -148,7 +148,7 @@ intelligence.prototype.think = function(text) {
     }
 
     if(text == 'wifi' || text.contains('wifi')){
-        this.session.send("*SSID:* Quantox (Quantox1, Quantox2)\n\n*PASS:* 19qt918ac");
+        this.session.send("*SSID:* Quantox (Quantox1, Quantox2)\n\n*PASS:* 17qt918ac");
     }
 
     if(text.contains('zdravo')){
