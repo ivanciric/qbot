@@ -41,9 +41,7 @@ weather.prototype.fetchTemp = function(callback) {
                 if( item.id == '789128' ){// Kragujevac
                     weatherKragujevac = item.main;
                 }
-
-
-
+                
             });
 
             callback('Beograd: ' + parseFloat(weatherBelgrade.temp).toFixed(1) + ' °C\n\nČačak: ' +
