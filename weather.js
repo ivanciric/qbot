@@ -6,7 +6,7 @@ function weather() {}
 
 weather.prototype.fetchTemp = function(callback) {
 
-    var urlVreme = "http://api.openweathermap.org/data/2.5/group?id=791148,792078,3189595,789128 " +
+    var urlVreme = "http://api.openweathermap.org/data/2.5/group?id=791148,792078,3189595,789128" +
         "&appid=8468ccd3277f4d4a4b8f815a3b2bd756&units=metric";
 
     request({
