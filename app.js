@@ -184,6 +184,32 @@ bot.dialog('/', function (session) {
     }
 
     /**
+     * Crypto data - currency detail
+     */
+    var cryptoData = text.match(/(crypto) (.*)/i);
+    if(cryptoData && cryptoData.length > 0)
+    {
+        var cryptoName = cryptoData[2];
+        if (cryptoName !== 'total') {
+            return crypto.detail(cryptoName, function(detail){
+                session.send( detail );
+            });
+        }
+    }
+
+    /**
+     * Crypto data - total market cap
+     */
+    if((text.contains('crypto') && text.contains('total'))
+        || text.contains('marketcap')
+        || text.contains('market cap'))
+    {
+        return crypto.total(function(total){
+            session.send( total );
+        });
+    }
+
+    /**
      * Crypto data - list currencies
      */
     if(text.contains('crypto')
@@ -194,18 +220,6 @@ bot.dialog('/', function (session) {
     {
         return crypto.list(function(list){
             session.send( list );
-        });
-    }
-    
-    /**
-     * Crypto data - total market cap
-     */
-    if((text.contains('crypto') && text.contains('total'))
-        || text.contains('marketcap')
-        || text.contains('market cap'))
-    {
-        return crypto.total(function(total){
-            session.send( total );
         });
     }
 
