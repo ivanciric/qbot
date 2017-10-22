@@ -12,6 +12,7 @@ var Meme = require("./meme");
 var Intelligence = require("./intelligence");
 var Relationships = require("./relationships");
 var Transliterator = require("./transliterate");
+var WC = require("./wc");
 
 const io    = require('socket.io-client');
 
@@ -55,6 +56,7 @@ bot.dialog('/', function (session) {
     var intelligence = new Intelligence(responder, session, name);
     var meme = new Meme();
     var lights = new Lights();
+    var wc = new WC();
 
     /**
      * Main responder
@@ -178,6 +180,14 @@ bot.dialog('/', function (session) {
         return meme.list(function(memes){
 
             session.send( memes );
+        });
+    }
+
+    if(text.contains('wc'))
+    {
+        return wc.isFree(function(msg){
+
+            session.send( msg );
         });
     }
 
