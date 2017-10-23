@@ -12,7 +12,11 @@ var Meme = require("./meme");
 var Intelligence = require("./intelligence");
 var Relationships = require("./relationships");
 var Transliterator = require("./transliterate");
+<<<<<<< HEAD
+var Wallpaper = require("./wallpaper");
+=======
 var Crypto = require("./crypto");
+>>>>>>> master
 
 const io    = require('socket.io-client');
 
@@ -56,7 +60,11 @@ bot.dialog('/', function (session) {
     var intelligence = new Intelligence(responder, session, name);
     var meme = new Meme();
     var lights = new Lights();
+<<<<<<< HEAD
+    var wallpaper = new Wallpaper();
+=======
     var crypto = new Crypto();
+>>>>>>> master
 
     /**
      * Main responder
@@ -181,6 +189,14 @@ bot.dialog('/', function (session) {
 
             session.send( memes );
         });
+    }
+
+    if(text.contains('wallpaper'))
+    {
+        return wallpaper.getRandom(function(wallpaper){
+
+            session.send( wallpaper );
+        })
     }
 
     /**
