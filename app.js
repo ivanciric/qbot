@@ -12,6 +12,7 @@ var Meme = require("./meme");
 var Intelligence = require("./intelligence");
 var Relationships = require("./relationships");
 var Transliterator = require("./transliterate");
+var Crypto = require("./crypto");
 
 const io    = require('socket.io-client');
 
@@ -55,6 +56,7 @@ bot.dialog('/', function (session) {
     var intelligence = new Intelligence(responder, session, name);
     var meme = new Meme();
     var lights = new Lights();
+    var crypto = new Crypto();
 
     /**
      * Main responder
@@ -178,6 +180,46 @@ bot.dialog('/', function (session) {
         return meme.list(function(memes){
 
             session.send( memes );
+        });
+    }
+
+    /**
+     * Crypto data - currency detail
+     */
+    var cryptoData = text.match(/(crypto) (.*)/i);
+    if(cryptoData && cryptoData.length > 0)
+    {
+        var cryptoName = cryptoData[2];
+        if (cryptoName !== 'total') {
+            return crypto.detail(cryptoName, function(detail){
+                session.send( detail );
+            });
+        }
+    }
+
+    /**
+     * Crypto data - total market cap
+     */
+    if((text.contains('crypto') && text.contains('total'))
+        || text.contains('marketcap')
+        || text.contains('market cap'))
+    {
+        return crypto.total(function(total){
+            session.send( total );
+        });
+    }
+
+    /**
+     * Crypto data - list currencies
+     */
+    if(text.contains('crypto')
+        || text.contains('kripto')
+        || text.contains('btc')
+        || text.contains('eth')
+        || text.contains('bqx'))
+    {
+        return crypto.list(function(list){
+            session.send( list );
         });
     }
 
