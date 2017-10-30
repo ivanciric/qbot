@@ -8,3 +8,5 @@ Office Skype bot written in Node.js
 - **crypto total** - shows total market cap and BTC dominance
 - **svetlo ID on/off** - turns the specific light on or off (svetlo 1 on)
 - **klima ID power** - sends the power command to specific AC (klima 1 power)
+- **cir2lat CYRILICTEXT** - transliterates cyrilic to latin
+- **memes** - get the list of available memes
