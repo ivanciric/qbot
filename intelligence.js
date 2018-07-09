@@ -162,5 +162,9 @@ intelligence.prototype.think = function(text) {
     if(text.contains('yeah')){
         this.session.send('https://youtu.be/rFTRmjimtCc?t=2s');
     }
+    
+    if(text.contains('ping')){
+        this.session.send('pong - Alive and kickin');
+    }
 
 };
